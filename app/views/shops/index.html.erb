@@ -1,0 +1,23 @@
+<table>
+ <tr>
+    <th>Owner Name</th>
+    <th>Type</th>
+    <th>Address</th>
+    <th>Email id</th>
+    
+  </tr>
+
+  <% @shops.all.each do |shop| %>
+    <tr>
+      <td><%= shop.owner_name %></td>
+      <td><%= shop.shop_type %></td>
+      <td><%= shop.address %></td>
+      <td><%= shop.email_id %></td>
+      <td><a href="/stores/<%=shop.store_id%>/shops/<%=shop.id%>">Show </a></td>
+      <td><a href="/stores/<%=shop.store_id%>/shops/<%=shop.id%>/edit">Edit </a></td>
+    
+    </tr>
+  <% end %>
+
+</table>
+

@@ -1,0 +1,31 @@
+<%#= form_for store_shops_path(@shop) do |f| %>
+<%#= form_for :shop, url: store_shops_path(@shop) do |f| %>
+<%#= form_tag(url: store_shops_path(@shop), method: "patch") do |f|%>
+<%= form_for(@shop) do |f| %>
+<%= hidden_field_tag "shop[store_id]",params[:store_id] %>
+<table>
+<tr>
+    <td><label>Owner Name</label></td>
+
+    <td><%= f.text_field :owner_name %></td>
+  </tr>
+<tr>
+    <td><label>Type</label></td>
+
+    <td><%= select_tag("shop[shop_type]", options_for_select([ ['---Select Type---', ''], ['Admin', 'Admin'],['Content', 'Content']])) %></td>
+  </tr>
+<tr>
+    <td><label>Address</label></td>
+
+    <td><%= f.text_field :address %></td>
+  </tr>
+<tr>
+    <td><label>Email id</label></td>
+
+    <td><%= f.text_field :email_id %></td>
+  </tr>
+  <tr>
+    <td><%= submit_tag "Create Shop"%></td>
+  </tr>
+</table>
+<% end %>

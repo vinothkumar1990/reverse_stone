@@ -1,0 +1,20 @@
+<%= form_for :store, url: store_path(@store), method: :patch do |f| %>
+<table>
+  <tr>
+    <td><label>Name</label></td>
+
+    <td><%= f.text_field :name %></td>
+    
+  </tr>
+<tr>
+    <td><label>Address</label></td>
+
+    <td><%= f.text_field :address %></td>
+    
+  </tr>
+
+  <tr>
+    <td><%= f.submit "Update"%></td>
+ </tr>
+</table>
+<% end %>
